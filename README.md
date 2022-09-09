@@ -18,5 +18,3 @@ The game has a gamecontroller that can start, pause, or end a game. From the pau
 }
 
 Oh and there is also a Big Obstacle which you need to use to push other obstacles.
-
-![Gameplay Gif](https://media1.giphy.com/media/GkVO0nvXp2VxWGZiqu/giphy.gif)
