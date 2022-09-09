@@ -9,9 +9,6 @@ public class BallHealth : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Danger"))
-        {
-            Debug.Log("Ball hitted object " + collision.collider.gameObject.name);
             gameController.GameOver();
-        }
     }
 }

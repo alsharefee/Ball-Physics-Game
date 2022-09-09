@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnRandomGroupTrigger : MonoBehaviour
@@ -21,7 +19,7 @@ public class SpawnRandomGroupTrigger : MonoBehaviour
 
     private void SpawnRandomObstaclesGroup()
     {
-        GameObject randomGroup = obstaclesGroups[Random.Range(0, obstaclesGroups.Length - 1)];
+        GameObject randomGroup = obstaclesGroups[Random.Range(0, obstaclesGroups.Length)];
         GameObject spawnedGroup = Instantiate(randomGroup, parentTransform);
 
         spawnedGroup.transform.position = groupSpawningPosition.position;

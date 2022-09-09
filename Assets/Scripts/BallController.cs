@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
@@ -40,10 +38,7 @@ public class BallController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             gameController.PauseOrResumeGame();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-            currentForce = boostSpeed;
-        else
-            currentForce = defaultForce;
+        currentForce = Input.GetKeyDown(KeyCode.LeftShift) ? boostSpeed : defaultForce;
     }
 
     private void MoveBall()

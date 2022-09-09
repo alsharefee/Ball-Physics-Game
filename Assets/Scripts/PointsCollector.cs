@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -6,7 +5,7 @@ using TMPro;
 public class PointsCollector : MonoBehaviour
 {
     public TextMeshProUGUI pointsUI;
-    int pointsCollected;
+    [HideInInspector] public int pointsCollected;
     List<GameObject> collectedPointPickups = new List<GameObject>();
 
 
@@ -23,7 +22,7 @@ public class PointsCollector : MonoBehaviour
 
         GameObject collectedPointPickup = collision.collider.gameObject;
         collectedPointPickups.Add(collectedPointPickup);
-        collectedPointPickup.SetActive(false);
+        Destroy(collectedPointPickup);
     }
     public void ResetPoints()
     {
