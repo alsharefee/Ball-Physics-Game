@@ -18,3 +18,5 @@ The game has a gamecontroller that can start, pause, or end a game. From the pau
 }
 
 Oh and there is also a Big Obstacle which you need to use to push other obstacles.
+
+You can play it here: https://alsharefee.itch.io/3d-ball-physics-game
