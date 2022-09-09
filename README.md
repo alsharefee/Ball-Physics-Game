@@ -1,6 +1,8 @@
 # Ball-Physics-Game
 Full Unity project game where players must control a ball and reach a goal.
 
+<iframe src="https://giphy.com/embed/GkVO0nvXp2VxWGZiqu" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/game-ball-physics-GkVO0nvXp2VxWGZiqu">via GIPHY</a></p>
+
 The objective of this game is to roll a ball through a vertically scrolling platform. This game is a 3D game in perspective using native Unity physics. The player can push positive obstacles of the same color as themself around, and must avoid Danger obstacles. If the player touches a Danger obstacle, or if they are pushed over the edge of the platform, they lose the game. Neutral obstacles cannot be pushed by the player but can be pushed indirectly by pushing a positive obstacle into the neutral obstacle. Danger obstacles can be pushed the same way. Fixed obstacles will not be able to move directly or indirectly. The player collects points from point pickups that disappear when touched. The player can sometimes find a powerup that, when picked up, will change all obstacles currently on screen to the player’s color.
 Groups of obstacles are spawned randomly. The player controls the speed and direction of the ball. The player needs to reach a goal area or checkpoint before a timer runs out and picks up points along the way. The raises slowly during the level.
 
