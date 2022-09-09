@@ -20,8 +20,7 @@ public class BallController : MonoBehaviour
     {
         ballDefaultPosition = transform.position;
     }
-
-    void Update()
+    void FixedUpdate()
     {
         if (!gameController.isGameStarted)
             return;
