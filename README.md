@@ -1,6 +1,8 @@
 # Ball-Physics-Game
 Full Unity project game where players must control a ball and reach a goal.
 
+You can play it here: https://alsharefee.itch.io/3d-ball-physics-game
+
 ![Gameplay Gif](https://github.com/alsharefee/Ball-Physics-Game/blob/main/Assets/ReadMe/Ball%20Physics%20Gameplay%20Gif%202.gif)
 
 The objective of this game is to roll a ball through a vertically scrolling platform. This game is a 3D game in perspective using native Unity physics. The player can push positive obstacles of the same color as themself around, and must avoid Danger obstacles. If the player touches a Danger obstacle, or if they are pushed over the edge of the platform, they lose the game. Neutral obstacles cannot be pushed by the player but can be pushed indirectly by pushing a positive obstacle into the neutral obstacle. Danger obstacles can be pushed the same way. Fixed obstacles will not be able to move directly or indirectly. The player collects points from point pickups that disappear when touched. The player can sometimes find a powerup that, when picked up, will change all obstacles currently on screen to the player’s color.
@@ -20,5 +22,3 @@ The game has a gamecontroller that can start, pause, or end a game. From the pau
 }
 
 Oh and there is also a Big Obstacle which you need to use to push other obstacles.
-
-You can play it here: https://alsharefee.itch.io/3d-ball-physics-game
