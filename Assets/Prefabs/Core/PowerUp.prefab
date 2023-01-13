@@ -112,10 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b26d80cbd5be143baa4a262869a0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclesNames:
-  - Neutral Obstacle
+  _obstaclesNames:
   - Danger Obstacle
-  playerMaterial: {fileID: 2100000, guid: c6593b96b468b1c4ba9b15dc1e63155a, type: 2}
+  - Neutral Obstacle
+  _playerMaterial: {fileID: 2100000, guid: c6593b96b468b1c4ba9b15dc1e63155a, type: 2}
 --- !u!135 &2401267911523775992
 SphereCollider:
   m_ObjectHideFlags: 0
