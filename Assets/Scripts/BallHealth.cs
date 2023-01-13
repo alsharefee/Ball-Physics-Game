@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BallHealth : MonoBehaviour
+namespace BallPhysicsGame
 {
-    public GameController gameController;
-
-    private void OnCollisionEnter(Collision collision)
+    public class BallHealth : MonoBehaviour
     {
-        if (collision.collider.CompareTag("Danger"))
-            gameController.GameOver();
-    }
+        [SerializeField] GameManager _gameManager;
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.CompareTag("Danger"))
+                _gameManager.GameOver();
+        }
+    } 
 }

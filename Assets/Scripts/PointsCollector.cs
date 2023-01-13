@@ -2,31 +2,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PointsCollector : MonoBehaviour
+/// <summary>
+/// Collect points and show the count on the UI.
+/// </summary>
+namespace BallPhysicsGame
 {
-    public TextMeshProUGUI pointsUI;
-    [HideInInspector] public int pointsCollected;
-    List<GameObject> collectedPointPickups = new List<GameObject>();
-
-
-    private void OnCollisionEnter(Collision collision)
+    public class PointsCollector : MonoBehaviour
     {
-        if (collision.collider.CompareTag("Point"))
-            CollectPointAndDestroyIt(collision);
-    }
+        public TextMeshProUGUI _pointsUI;
+        [HideInInspector] public int PointsCollected;
+        List<GameObject> _collectedPointPickups = new List<GameObject>();
 
-    private void CollectPointAndDestroyIt(Collision collision)
-    {
-        pointsCollected++;
-        pointsUI.text = "" + pointsCollected;
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.CompareTag("Point"))
+                CollectPointAndDestroyIt(collision);
+        }
 
-        GameObject collectedPointPickup = collision.collider.gameObject;
-        collectedPointPickups.Add(collectedPointPickup);
-        Destroy(collectedPointPickup);
-    }
-    public void ResetPoints()
-    {
-        pointsCollected = 0;
-        pointsUI.text = "" + pointsCollected;
-    }
+        private void CollectPointAndDestroyIt(Collision collision)
+        {
+            PointsCollected++;
+            _pointsUI.text = "" + PointsCollected;
+
+            GameObject collectedPointPickup = collision.collider.gameObject;
+            _collectedPointPickups.Add(collectedPointPickup);
+            Destroy(collectedPointPickup);
+        }
+        public void ResetPoints()
+        {
+            PointsCollected = 0;
+            _pointsUI.text = "" + PointsCollected;
+        }
+    } 
 }

@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class SaveData : MonoBehaviour
+namespace BallPhysicsGame
 {
-    public void SaveIntoJson(GameSessionData gameSessionData)
+    public class SaveData : MonoBehaviour
     {
-        string Session = JsonUtility.ToJson(gameSessionData);
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/GameSessionData.json", Session);
-        Debug.Log("Saved JSON file to location: " + Application.persistentDataPath);
+        public void SaveIntoJson(GameSessionData gameSessionData)
+        {
+            string Session = JsonUtility.ToJson(gameSessionData);
+            System.IO.File.WriteAllText(Application.persistentDataPath + "/GameSessionData.json", Session);
+            Debug.Log("Saved JSON file to location: " + Application.persistentDataPath);
+        }
     }
-}
-public class GameSessionData
-{
-    public string timePlayed;
-    public string timeJasonMade;
-    public string gameName;
-    public int score;
+    public class GameSessionData
+    {
+        public string timePlayed;
+        public string timeJasonMade;
+        public string gameName;
+        public int score;
+    } 
 }

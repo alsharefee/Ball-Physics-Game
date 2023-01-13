@@ -2,36 +2,38 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
+namespace BallPhysicsGame
 {
-    public TextMeshProUGUI timerUI;
-    public float timerLimit = 300f;
-    private float currentTime = 0f;
-
-    public GameController gameController;
-
-    public void ResetTimer()
+    public class Timer : MonoBehaviour
     {
-        currentTime = timerLimit;
-        StopAllCoroutines();
-        StartCoroutine(StartTimer());
-        timerUI.text = "" + currentTime;
-    }
+        [SerializeField] TextMeshProUGUI _timerUI;
+        [SerializeField] float _timerLimit = 300f;
+        [SerializeField] GameManager _gameManager;
 
-    IEnumerator StartTimer()
-    {
-        while (currentTime > 0)
+        private float currentTime = 0f;
+
+        public void ResetTimer()
         {
-            if (!gameController.isGameStarted)
-                yield break; 
-
-            yield return new WaitForSeconds(1);
-            currentTime--;
-            timerUI.text = "" + currentTime;
+            currentTime = _timerLimit;
+            StopAllCoroutines();
+            StartCoroutine(StartTimer());
+            _timerUI.text = "" + currentTime;
         }
 
-        Debug.Log("Time Finished");
-        gameController.GameOver();
-    }
+        IEnumerator StartTimer()
+        {
+            while (currentTime > 0)
+            {
+                if (!_gameManager.isGameStarted)
+                    yield break;
 
+                yield return new WaitForSeconds(1);
+                currentTime--;
+                _timerUI.text = "" + currentTime;
+            }
+
+            Debug.Log("Time Finished");
+            _gameManager.GameOver();
+        }
+    } 
 }

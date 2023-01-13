@@ -342,11 +342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5bac90941cbb042876aa4dca3ace29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
-  rig: {fileID: 3681561517070378001}
-  defaultForce: 6
-  boostSpeed: 20
-  jumpForceMultiplayer: 0
+  _gameManager: {fileID: 0}
+  _rig: {fileID: 3681561517070378001}
+  _defaultForce: 30
+  _boostSpeed: 70
+  _jumpForceMultiplayer: 0
 --- !u!114 &3681561517070378004
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39333279}
   m_Layer: 0
-  m_Name: =========================
+  m_Name: ============Environment=============
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,6 +1322,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2295193885381081513, guid: ef218be45df35264b8ef13f4957c25d2, type: 3}
   m_PrefabInstance: {fileID: 945961815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &951423887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951423888}
+  m_Layer: 0
+  m_Name: ============Game Play=============
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &951423888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951423887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &965217107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,7 +2172,7 @@ RectTransform:
   - {fileID: 1358064772}
   - {fileID: 1227802810}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2659,7 +2689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &1687258586
 MonoBehaviour:
@@ -3016,7 +3046,7 @@ Transform:
   - {fileID: 653260038}
   - {fileID: 1764833768}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2011370249
 GameObject:
@@ -3107,7 +3137,7 @@ GameObject:
   - component: {fileID: 2111378503}
   - component: {fileID: 2111378504}
   m_Layer: 0
-  m_Name: Game Controller
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3125,7 +3155,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2111378502
 MonoBehaviour:
@@ -3139,18 +3169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0765e3fc38f53499919bd7b3b82b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseUIPanel: {fileID: 61727623}
-  gameStartUIPanel: {fileID: 2011370249}
-  gameOverUIPanel: {fileID: 1358064771}
-  gameWonUIPanel: {fileID: 1227802809}
-  fireWorksVFX: {fileID: 945961817}
   Paused: 0
   isGameStarted: 0
-  ballController: {fileID: 1623552449}
-  pointsCollector: {fileID: 3681561516366882818}
-  timer: {fileID: 2111378503}
-  obstaclesManager: {fileID: 978342383}
-  saveData: {fileID: 2111378504}
+  _pauseUIPanel: {fileID: 61727623}
+  _gameStartUIPanel: {fileID: 2011370249}
+  _gameOverUIPanel: {fileID: 1358064771}
+  _gameWonUIPanel: {fileID: 1227802809}
+  _fireWorksVFX: {fileID: 945961817}
+  _ballController: {fileID: 1623552449}
+  _pointsCollector: {fileID: 3681561516366882818}
+  _timer: {fileID: 2111378503}
+  _obstaclesManager: {fileID: 978342383}
+  _saveData: {fileID: 2111378504}
 --- !u!114 &2111378503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3163,9 +3193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13042a3b14a5d44419d4599324043b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerUI: {fileID: 965217109}
-  timerLimit: 300
-  gameController: {fileID: 2111378502}
+  _timerUI: {fileID: 965217109}
+  _timerLimit: 300
+  _gameManager: {fileID: 2111378502}
 --- !u!114 &2111378504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,13 +3836,17 @@ PrefabInstance:
       propertyPath: pointsUI
       value: 
       objectReference: {fileID: 1438143565}
+    - target: {fileID: 3681561516366882818, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
+      propertyPath: _pointsUI
+      value: 
+      objectReference: {fileID: 1438143565}
     - target: {fileID: 3681561517070377996, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
       propertyPath: m_Name
       value: Player Ball
       objectReference: {fileID: 0}
     - target: {fileID: 3681561517070378000, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3681561517070378000, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3855,15 +3889,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3681561517070378003, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
-      propertyPath: boostSpeed
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681561517070378003, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
-      propertyPath: defaultForce
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681561517070378003, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
-      propertyPath: gameController
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 2111378502}
+    - target: {fileID: 3681561517070378004, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}
+      propertyPath: _gameManager
       value: 
       objectReference: {fileID: 2111378502}
     - target: {fileID: 3681561517070378004, guid: 842466d289569a4458c1eca81fd2ea9b, type: 3}

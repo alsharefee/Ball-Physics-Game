@@ -1,33 +1,36 @@
 using UnityEngine;
 
-public class SpawnRandomGroupTrigger : MonoBehaviour
+namespace BallPhysicsGame
 {
-    public Transform parentTransform;
-    public Transform groupSpawningPosition;
-    public GameObject[] obstaclesGroups;
-
-    private BoxCollider boxCollider => GetComponent<BoxCollider>();
-
-    private void OnTriggerEnter(Collider other)
+    public class SpawnRandomGroupTrigger : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        [SerializeField] Transform parentTransform;
+        [SerializeField] Transform groupSpawningPosition;
+        [SerializeField] GameObject[] obstaclesGroups;
+
+        private BoxCollider boxCollider => GetComponent<BoxCollider>();
+
+        private void OnTriggerEnter(Collider other)
         {
-            SpawnRandomObstaclesGroup();
-            boxCollider.enabled = false;
+            if (other.CompareTag("Player"))
+            {
+                SpawnRandomObstaclesGroup();
+                boxCollider.enabled = false;
+            }
         }
-    }
 
-    private void SpawnRandomObstaclesGroup()
-    {
-        GameObject randomGroup = obstaclesGroups[Random.Range(0, obstaclesGroups.Length)];
-        GameObject spawnedGroup = Instantiate(randomGroup, parentTransform);
+        private void SpawnRandomObstaclesGroup()
+        {
+            GameObject randomGroup = obstaclesGroups[Random.Range(0, obstaclesGroups.Length)];
+            GameObject spawnedGroup = Instantiate(randomGroup, parentTransform);
 
-        spawnedGroup.transform.position = groupSpawningPosition.position;
-        spawnedGroup.transform.rotation = groupSpawningPosition.rotation;
-    }
+            spawnedGroup.transform.position = groupSpawningPosition.position;
+            spawnedGroup.transform.rotation = groupSpawningPosition.rotation;
+        }
 
-    public void ResetTrigger()
-    {
-        boxCollider.enabled = true;
-    }
+        public void ResetTrigger()
+        {
+            boxCollider.enabled = true;
+        }
+    } 
 }
